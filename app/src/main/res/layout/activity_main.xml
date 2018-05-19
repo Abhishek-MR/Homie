@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.example.abhi.texttospeechandspeechtotext.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Homie"
+            app:titleTextColor="@color/colorTextBlack"
+            app:titleMarginStart="30dp"
+            >
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/txtSpeechInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlueGrey"
+                    android:text="Hello user,\nwhat can I do for you?"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:textSize="26dp"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/request"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/txtSpeechInput"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/grey_percent_50"
+                    android:gravity="end"
+                    android:textStyle="italic"
+                    android:textSize="15dp"
+                    />
+
+            </RelativeLayout>
+
+            <com.skyfishjy.library.RippleBackground
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/animation_list"
+                android:id="@+id/content"
+                app:rb_color="@color/colorWhite"
+                app:rb_radius="25dp"
+                app:rb_rippleAmount="10"
+                app:rb_duration="3000"
+                app:rb_scale="6">
+
+
+                <LinearLayout
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_stroke"
+                    >
+
+
+                    <ImageButton
+                        android:layout_margin="15dp"
+                        android:id="@+id/btnSpeak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:src="@drawable/ic_mic" />
+
+                </LinearLayout>
+            </com.skyfishjy.library.RippleBackground>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_sheet"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="1"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+        <TextView
+            android:id="@+id/swipe_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:gravity="center"
+            android:text="Swipe up ⇡"
+            android:textColor="@color/Color_LightGrey"
+            android:textSize="18dp" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_gradient"
+                android:orientation="vertical">
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="4dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="5dp">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_home_black_24dp"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center_vertical"
+                                android:text="Connected"
+                                android:textColor="@color/Color_Green"
+                                android:textSize="20dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="5dp">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_lightbulb_outline_black_24dp"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="Connected"
+                                android:textColor="@color/Color_Green"
+                                android:gravity="center_vertical"
+                                android:textSize="20dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+
+                        android:padding="10dp">
+
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.example.abhi.texttospeechandspeechtotext.ArcProgress
+                                    android:id="@+id/temp_progress"
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    android:background="@color/colorWhite"
+                                    app:arc_bottom_text=" Temp "
+                                    app:arc_bottom_text_size="20dp"
+                                    app:arc_finished_color="@color/Color_Green"
+                                    app:arc_suffix_text="  o"
+
+                                    />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.example.abhi.texttospeechandspeechtotext.ArcProgress
+                                    android:id="@+id/hum_progress"
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    android:background="@color/colorWhite"
+                                    app:arc_bottom_text=" Hum "
+                                    app:arc_bottom_text_size="20dp"
+                                    app:arc_finished_color="@color/Color_Green"
+                                    app:arc_suffix_text=" o"/>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.example.abhi.texttospeechandspeechtotext.ArcProgress
+                                    android:id="@+id/temp_progress"
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    android:background="@color/colorWhite"
+                                    app:arc_bottom_text=" Temp "
+                                    app:arc_bottom_text_size="20dp"
+                                    app:arc_finished_color="@color/Color_Green"
+                                    app:arc_suffix_text="  o"
+
+                                    />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.example.abhi.texttospeechandspeechtotext.ArcProgress
+                                    android:id="@+id/hum_progress"
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_weight="1"
+                                    android:background="@color/colorWhite"
+                                    app:arc_bottom_text=" Hum "
+                                    app:arc_bottom_text_size="20dp"
+                                    app:arc_finished_color="@color/Color_Green"
+                                    app:arc_suffix_text=" o"/>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="2dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Light"
+                                    android:textColor="@color/colorTextBlack"
+                                    android:textSize="25dp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <io.ghyeok.stickyswitch.widget.StickySwitch
+                                    android:id="@+id/sticky_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    app:ss_animationDuration="600"
+                                    app:ss_animationType="curved"
+                                    app:ss_iconPadding="18dp"
+                                    app:ss_iconSize="22dp"
+                                    app:ss_leftText="OFF"
+                                    app:ss_rightText="ON"
+                                    app:ss_selectedTextSize="18dp"
+                                    app:ss_sliderBackgroundColor="@color/Color_AliceBlue"
+                                    app:ss_switchColor="@color/Color_BlueViolet"
+                                    app:ss_textColor="@color/colorTextBlack"
+                                    app:ss_textSize="15sp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Fan"
+                                    android:textColor="@color/colorTextBlack"
+                                    android:textSize="25dp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <io.ghyeok.stickyswitch.widget.StickySwitch
+                                    android:id="@+id/sticky_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    app:ss_animationDuration="600"
+                                    app:ss_animationType="curved"
+                                    app:ss_iconPadding="18dp"
+                                    app:ss_iconSize="22dp"
+                                    app:ss_leftText="OFF"
+                                    app:ss_rightText="ON"
+                                    app:ss_selectedTextSize="18dp"
+                                    app:ss_sliderBackgroundColor="@color/Color_AliceBlue"
+                                    app:ss_switchColor="@color/Color_BlueViolet"
+                                    app:ss_textColor="@color/colorTextBlack"
+                                    app:ss_textSize="15sp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
